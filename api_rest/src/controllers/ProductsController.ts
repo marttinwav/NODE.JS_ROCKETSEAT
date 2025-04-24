@@ -1,6 +1,6 @@
 import { Request, Response } from "express"
 import { AppError } from "../utils/AppError";
-
+import { z } from "zod"
 class ProductsController {
   index(req: Request, res: Response) {
      const { page, limit } = req.query;
@@ -9,19 +9,18 @@ class ProductsController {
   }
 
   create(req: Request, res: Response) {
-     const { name, price } = req.body;
+    
+     const bodySchema = z.object({
+      name: z
+      .string({required_error: "Name is required!"})
+      .trim()
+      .min(6, {message: "Name must be 6 or more characters"}),
+      price: z.number({required_error: "Price is required!"})
+      .positive(),
 
-      if (!price) {
-        throw new AppError("O preço do produto é obrigatório");
-      }
-     if (name.trim().length < 6) {
-      throw new AppError ("Nome do produto precisa ter pelo menos 6 caracteres!")
-      
-     }
-     if (!price) {
-      throw new AppError ("O preço do produto é obrigatório")
-      
-     }
+     })
+
+     const {name, price} = bodySchema.parse(req.body)
 
      // throw new Error("Erro ao executar o servidor!")
 
