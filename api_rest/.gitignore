@@ -1,0 +1,44 @@
+# Pasta de cache do Visual Studio
+.vs/
+
+# Diretórios de build
+[Bb]in/
+[Oo]bj/
+
+# Arquivos de configuração do usuário
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Arquivos temporários e backups
+*.log
+*.tlog
+*.tmp
+*.bak
+
+# Diretórios de dependências
+packages/
+node_modules/
+
+# Arquivos de lock
+project.lock.json
+project.assets.json
+
+# Python (caso esteja usando)
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+*.pyd
+.env
+*.env
+
+# Outras IDEs/editors
+.idea/
+*.code-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
