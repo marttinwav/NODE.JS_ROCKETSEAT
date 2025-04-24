@@ -1,0 +1,17 @@
+{
+  "name": "api_rest",
+  "version": "1.0.0",
+  "description": "Minha primeira api-rest",
+  "main": "server.js",
+  "scripts": {
+    "dev": "tsx watch  src/server.ts"
+  },
+  "author": "Marttin",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^20.14.12",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.4"
+  }
+}
